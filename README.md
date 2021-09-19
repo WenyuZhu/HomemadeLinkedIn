@@ -1,2 +1,3 @@
-# HomemadeLinkedIn
-This is a project using Fastapi to develop a 'Homemade LinkedIn'
+# My GitHub Project
+
+This is my GitHub project. I published it directly from Visual Studio Code.
