@@ -1,7 +1,6 @@
 from typing import List, Optional
 from datetime import date
 from pydantic import BaseModel
-from sqlalchemy.sql.sqltypes import Boolean
 
 
 
@@ -105,7 +104,7 @@ class PublicationsBase(BaseModel):
     publication_date: Optional[date] = None
     authors: Optional[str] = None
     publication_URL:Optional[str] = None
-    description: Optional[float] = None
+    description: Optional[str] = None
     
 
 class PublicationsCreate(PublicationsBase):
@@ -121,7 +120,7 @@ class Publications(PublicationsBase):
 
 
 class SkillsBase(BaseModel):
-    name: str
+    name: str = None
 
 class SkillsCreate(SkillsBase):
     pass
@@ -137,7 +136,7 @@ class Skills(SkillsBase):
 
 class UserBase(BaseModel):
     email: str
-    name: str
+    name: Optional[str]
     languages: Optional[str] = None
     is_member: bool = False
     about: Optional[str] = None
@@ -148,13 +147,13 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    courses: List[Courses] = []
-    education: List[Education] = []
-    experience: List[Experience] = []
-    license_certifications: List[LicenseCertifications] = []
-    projects: List[Projects] = []
-    publications: List[Publications] = []
-    skills: List[Skills] = []
+    courses: Optional[List[Courses]] = []
+    education: Optional[List[Education]] = []
+    experience: Optional[List[Experience]] = []
+    license_certifications: Optional[List[LicenseCertifications]] = []
+    projects: Optional[List[Projects]] = []
+    publications: Optional[List[Publications]] = []
+    skills: Optional[List[Skills]] = []
 
     class Config:
         orm_mode = True

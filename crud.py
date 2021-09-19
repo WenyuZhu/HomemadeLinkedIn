@@ -1,20 +1,21 @@
 from sqlalchemy.orm import Session
 
-from Resume import models, schemas
+from . import models, schemas
+from .dependencies import get_password_hash
 
 
 ##########Functions for creating users' info############
 
 def create_user(db: Session, user: schemas.UserCreate):
-    fake_hashed_password = user.password + "notreallyhashed"
-    db_user = models.User(email=user.email, hashed_password=fake_hashed_password, name = user.name, languages = user.languages, is_member = user.is_member, about = user.about)
+    hashed_password = get_password_hash(user.password)
+    db_user = models.User(email=user.email, hashed_password=hashed_password, name = user.name, languages = user.languages, is_member = user.is_member, about = user.about)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
 
-def create_user_courses(db: Session, course: schemas.CoursesCreate, user_id: int):
-    db_course = models.Courses(**course.dict(), owner_id=user_id)
+def create_user_courses(db: Session, courses: schemas.CoursesCreate, user_id: int):
+    db_course = models.Courses(**courses.dict(), owner_id=user_id)
     db.add(db_course)
     db.commit()
     db.refresh(db_course)
@@ -99,9 +100,9 @@ def get_skills(db: Session, user_id: int):
 
 
 
-
-
-
-
-
+###############Functions for deleting users' info########################
+def delete_user_by_email(db: Session, email: str):
+    deletedRow = db.query(models.User).filter(models.User.email == email).delete()
+    db.commit()
+    return str(deletedRow) + " rows are deleted."
 

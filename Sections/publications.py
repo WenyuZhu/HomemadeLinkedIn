@@ -2,16 +2,16 @@ from typing import List
 from .. import schemas, crud
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from ..dependencies import get_token_header, get_db
+from ..dependencies import credentials_check, get_db
 
 
 router = APIRouter(
     tags=["publications"],
-    dependencies=[Depends(get_token_header)],
+    dependencies=[Depends(credentials_check)],
     responses={404: {"description": "Publications not found"}},
 )
 
-@router.get("/{user_id}/Publications", response_model = schemas.Projects)
+@router.get("/{user_id}/Publications", response_model = List[schemas.Publications])
 async def read_publications(user_id: int, db: Session = Depends(get_db)):
     db_publications = crud.get_publications(db, user_id)
     if db_publications is None:
@@ -19,7 +19,7 @@ async def read_publications(user_id: int, db: Session = Depends(get_db)):
     return db_publications
 
 
-@router.post("/{user_id}/Publications", response_model=List[schemas.Publications])
+@router.post("/{user_id}/Publications", response_model=schemas.Publications)
 def create_publications(user_id: int, publications: schemas.PublicationsCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user(db, user_id=user_id)
     if db_user is None:
