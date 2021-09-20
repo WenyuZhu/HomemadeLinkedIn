@@ -1,10 +1,7 @@
+#This file defines the database models
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float, Date
 from sqlalchemy.orm import relationship
-
-
 from .database import Base
-
-
 
 
 class User(Base):
@@ -27,8 +24,6 @@ class User(Base):
     projects = relationship("Projects", back_populates="owner")
     publications = relationship("Publications", back_populates="owner")
     skills = relationship("Skills", back_populates="owner")
-    
-
 
 
 class Courses(Base):
@@ -41,6 +36,7 @@ class Courses(Base):
     owner_id = Column(Integer, ForeignKey("users.id"))
 
     owner = relationship("User", back_populates="courses")
+
 
 class Education(Base):
 
@@ -58,6 +54,7 @@ class Education(Base):
 
     owner = relationship("User", back_populates="education")
 
+
 class Experience(Base):
 
     __tablename__ = "experience"
@@ -74,6 +71,7 @@ class Experience(Base):
     owner_id = Column(Integer, ForeignKey("users.id"))
 
     owner = relationship("User", back_populates="experience")
+
 
 class LicenseCertifications(Base):
 

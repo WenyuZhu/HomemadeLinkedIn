@@ -1,9 +1,12 @@
+# This file defines pydantic model schemas which interact with frontend
+
 from typing import List, Optional
 from datetime import date
 from pydantic import BaseModel
 
 
-
+# Each of the vitals has three schemas, one base shcema to be inherited, one schema to create an entry in database, 
+# and one schema to output the user info which can filter out some sensitive info
 class CoursesBase(BaseModel):
     course_name: str
     number: Optional[str] = None

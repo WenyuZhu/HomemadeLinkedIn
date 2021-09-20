@@ -1,3 +1,5 @@
+#This file is full of functions to read or save users' info from or to databse.
+
 from sqlalchemy.orm import Session
 
 from . import models, schemas
