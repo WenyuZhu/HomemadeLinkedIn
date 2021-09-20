@@ -91,25 +91,11 @@ This project uses a RESTful service [FastAPI](https://fastapi.tiangolo.com) to d
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Before you can sign in, please create an account(an user), find the 'Create User' button under 'defualt' tag, then click try it out, input your info in the request body field and hit the 'execute' button. 
-2. [![CreateUser.PNG]]
-3. Now you can sign in to the server. Find the 'Authorize' button on the top right corner, then input your email address in the 'username' field and the password.
+1. Before you can sign in, please create an account(an user), find the 'Create User' button under 'defualt' tag, then click try it out, input your info in the request body field and hit the 'execute' button. ![screenshot](CreateUser.PNG)
+3. Now you can sign in to the server. Find the 'Authorize' button ![screenshot](Authorize.PNG) on the top right corner, then input your email address in the 'username' field and the password.![screenshot](Signin.PNG)
 4. After you signing in the server, you can do the read and save operation to the server.
 
 _For more examples, please refer to the [FastAPI Tutorial](https://fastapi.tiangolo.com/tutorial/)_
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 
 
