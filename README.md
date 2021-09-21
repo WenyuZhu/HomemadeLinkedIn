@@ -3,6 +3,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![DockerHub][docker-shield]][docker-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -60,7 +61,6 @@ This project uses a RESTful service [FastAPI](https://fastapi.tiangolo.com) to d
 ### Built With
 
 * [FastAPI](https://fastapi.tiangolo.com)
-* [Unicorn](https://www.uvicorn.org/)
 
 
 
@@ -75,7 +75,7 @@ This project uses a RESTful service [FastAPI](https://fastapi.tiangolo.com) to d
   ```
 
 ### Installation
-
+#### Run on local terminal
 1. Clone the repo
    ```sh
    git clone https://github.com/WenyuZhu/HomemadeLinkedIn.git
@@ -87,7 +87,13 @@ This project uses a RESTful service [FastAPI](https://fastapi.tiangolo.com) to d
    ```
 4. Go to http://127.0.0.1:8000/docs in a browser.
 
-
+#### Run on Docker 
+1. Install the Docker from [Docker](https://www.docker.com/)
+2. Run the application on Docker, input following command in command line:
+   ```cmd
+   docker run -p 80:80 arthaszwy/homemadelinkedin:0.1.0
+   ```
+   The version number may vary, please check before run the command.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -113,6 +119,7 @@ Wenyu Zhu - [@LinkedIn](https://www.linkedin.com/in/wenyu-zhu-059856b7) - wzz001
 
 Project Link: [https://github.com/WenyuZhu/HomemadeLinkedIn](https://github.com/WenyuZhu/HomemadeLinkedIn)
 
+DockerHub Link: [https://hub.docker.com/repository/docker/arthaszwy/homemadelinkedin](https://hub.docker.com/repository/docker/arthaszwy/homemadelinkedin)
 
 
 <!-- ACKNOWLEDGEMENTS -->
@@ -137,4 +144,6 @@ Project Link: [https://github.com/WenyuZhu/HomemadeLinkedIn](https://github.com/
 [license-url]: https://github.com/WenyuZhu/HomemadeLinkedIn/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/wenyu-zhu-059856b7/
+[docker-shield]: https://img.shields.io/docker/v/arthaszwy/homemadelinkedin?style=flat-square
+[docker-url]: https://hub.docker.com/repository/docker/arthaszwy/homemadelinkedin
 [product-screenshot]: images/screenshot.png
