@@ -56,7 +56,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project uses a RESTful service [FastAPI](https://fastapi.tiangolo.com) to develop a backend application. It that can store users' info into or read it from a database, such as education history, work experience, etc. Besides the CRUD operations, the security functions are also developed, including login with passwords then verify it with the hashed password and authenticate users with encoded token.
+This project uses the [FastAPI](https://fastapi.tiangolo.com) Python framework to develop a RESTful API application that can post users' info into or get it from an SQLite database, such as reading and save education history, work experience, etc. Besides the CRUD operations, the security functions are also developed, including login with passwords then verify it with the hashed password and authenticate users with encoded token.
 
 ### Built With
 
