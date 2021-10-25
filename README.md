@@ -83,7 +83,7 @@ This project uses the [FastAPI](https://fastapi.tiangolo.com) Python framework t
 2. Navigate to folder HomemadeLinkedIn
 3. Run the server
    ```cmd
-   unicorn app.main:app --reload
+   uvicorn app.main:app --reload
    ```
 4. Go to http://127.0.0.1:8000/docs in a browser.
 
